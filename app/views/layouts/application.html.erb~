@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simplenews</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<div class="edge"></div>
+<div class="top">
+<div class="logo"></div>
+<div class="title">Test</div>
+<div class="buttons"></div>
+</div>
+
+<div class="rest">
+<% if logged_in? %>
+Hello, <%= current_user.displayname %> (<%= link_to "logout", logout_path %>)<br/>
+<% else %>
+<%= link_to "login", login_path %> or <%= link_to "register", new_user_path %>
+<% end %>
+
+<%= content_tag :p, notice, :class => 'notice' if notice.present? %>
+<%= content_tag :p, alert, :class => 'alert' if alert.present? %>
+
+<%= yield %>
+</div>
+
+</body>
+</html>

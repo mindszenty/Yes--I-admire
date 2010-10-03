@@ -1,0 +1,19 @@
+<h1>Listing articles</h1>
+<% @articles.each do |article| %>
+<div>
+    <span><%= article.total_rating %></span>
+    <span><%= article.rating_by(current_user) %></span>
+    <span><%= link_to article.title, article %></span>
+    <span><%= raw truncate h(article.body), :length => 500, :separator => " ", :omission => " " + link_to ('(more)', article) %></span>
+    <span>(by <%= article.author.displayname %>)</span>
+    
+    <div>Filed in: <%= article.category.title %></div>
+    <% if article.tags.any? %>
+        <div>Tags: <%= article.tags_string %></div>
+    <% end %>
+    
+    <div style="margin-bottom: 15px;"></div>
+</div>
+<% end %>
+
+<%= link_to 'New Article', new_article_path %>

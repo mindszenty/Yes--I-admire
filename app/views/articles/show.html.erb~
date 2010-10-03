@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%= @article.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @article.body %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @article.source %>
+</p>
+
+<% if @article.owned_by? current_user %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+<% end %>
+
+<h3>Comments</h3>
+<div id="comments">
+    <%= render @article.comments %>
+</div>
+
+<%= link_to "new comment", new_article_comment_path(@article, :format => :js), :remote => true, :id => 'new_comment_link' %>
+<%= link_to "star", vote_star_path(@article, :format => :js), :remote => true, :id => 'star_link' %>
+<%= link_to "cross", vote_cross_path(@article, :format => :js), :remote => true, :id => 'cross_link' %>

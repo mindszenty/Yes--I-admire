@@ -1,0 +1,47 @@
+require 'digest'
+
+class User < ActiveRecord::Base
+    # password and email validation code from Beginning Rails 3 book
+    attr_accessor :password
+    validates :email, :uniqueness => true,
+            :length => { :within => 5..50 },
+            :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
+    validates :password, :confirmation => true,
+            :length => { :within => 4..20 },
+            :presence => true,
+            :if => :password_required?
+    #has_many :articles 
+    has_many :articles_authored, :class_name => 'Article', :foreign_key => 'author_id'
+    #has_many :articles_rated, :class_name => 'Article', :foreign_key => 'appraiser_id', :through => :ratings
+    has_many :ratings
+    has_many :comments
+    
+    before_save :encrypt_new_password
+    
+    def displayname
+        return fullname || email
+    end
+    
+    def self.authenticate(email, password)
+        user = find_by_email(email)
+        return user if user && user.authenticated?(password)
+    end
+    
+    def authenticated?(password)
+        self.passhash == encrypt(password)
+    end
+    
+    protected
+        def encrypt_new_password
+            return if password.blank?
+            self.passhash = encrypt(password)
+        end
+        
+        def password_required?
+            passhash.blank? || password.present?
+        end
+        
+        def encrypt(string)
+            Digest::SHA1.hexdigest(string)
+        end
+end

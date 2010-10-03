@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "PTSans", Verdana, "DejaVu Sans", helvetica
+}
+
+body {
+    position: relative;
+}
+
+.edge {
+    background-color: #ffff00;
+    height: 10px;
+    width: 100%;
+}
+
+.top {
+    height: 300px; /* change later */
+    width: 100%;
+    min-width: 100%;
+}
+
+.logo {
+    margin-top: 35px;
+    margin-left: 55px;
+    width: 227px;
+    height: 124px;
+    background-image: url('/images/logo.png');
+    float: left;
+}
+
+.title {
+    margin-top: 70px;
+    margin-left: 30px;
+    float: left;
+    font-size: 48px;
+    max-width: 50%;
+}
+
+.rest {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
