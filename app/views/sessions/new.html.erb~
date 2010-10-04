@@ -1,0 +1,19 @@
+<% content_for :title do %>
+Beneath the moon, beside an ancient lake
+<% end %>
+
+<%= form_tag session_path do %>
+    <table>
+    <tr class="field">
+        <td class="label"><%= label_tag :email %></td>
+        <td class="input obligatory"><%= text_field_tag :email %></td>
+    </tr>
+    <tr class="field">
+        <td class="label"><%= label_tag :password %></td>
+        <td class="input obligatory"><%= password_field_tag :password %></td>
+    </tr>
+    <tr class="actions">
+        <td colspan="2" class="action"><%= image_submit_tag "login_button.png" %></td>
+    </tr>
+    </table>
+<% end %>

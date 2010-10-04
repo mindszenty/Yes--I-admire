@@ -1,11 +1,17 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "PTSans", Verdana, "DejaVu Sans", helvetica
+    font-family: "PTSans", Verdana, "DejaVu Sans", helvetica;
+    color: #3d6b63;
 }
 
 body {
     position: relative;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .edge {
@@ -15,7 +21,7 @@ body {
 }
 
 .top {
-    height: 300px; /* change later */
+    height: 250px; /* change later */
     width: 100%;
     min-width: 100%;
 }
@@ -30,15 +36,154 @@ body {
 }
 
 .title {
-    margin-top: 70px;
-    margin-left: 30px;
-    float: left;
-    font-size: 36px;
-    max-width: 50%;
+    padding-top: 70px;
+    margin-left: 312px;
+    font-size: 30px;
 }
 
-.rest {
+.buttons {
+    float: right;
+    margin-top: 40px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.button {
+    width: 295px;
+    height: 56px;
+    margin-bottom: 12px;
+}
+
+.button div {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.button img {
+    vertical-align: text-bottom;
+}
+
+.articles_index {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.articles_index td {
+    vertical-align: top;
+}
+
+td.total_rating {
+    padding-top: 13px;
+    padding-right: 10px;
+}
+
+td.total_rating div {
+    font-size: 20px;
+    background-image: url('/images/rating_frame.png');
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 13px;
+    width: 135px;
+    height: 58px;
+}
+
+td.rate {
+    padding-right: 30px;
+}
+
+td.rate img {
+    vertical-align: text-bottom;
+}
+
+td.article {
+    padding-top: 24px;
+    padding-bottom: 30px;
+}
+
+td.article div.article_title {
+    font-size: 20px;
+    width: 80%;
+}
+
+td.article div.article_body {
+    font-size: 20px;
+    width: 80%;
+}
+
+td.article div.article_category {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-right: 30px;
+    float: left;
+}
+
+td.article div.article_tags {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-right: 30px;
+    float: left;
+}
+
+td.article div.article_author {
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: right;
+}
+
+
+.main {
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+form table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr.field td.label {
+    text-align: right;
+    vertical-align: top;
+    padding-top: 20px;
+    margin-bottom: 90px;
+}
+
+tr.field td.label label {
+    font-size: 18px;
+    padding-right: 20px;
+    
+}
+
+tr.field td.input {
+    width: 648px;
+    height: 61px;
+    vertical-align: top;
+    padding-top: 18px;
+    background-repeat: no-repeat;
+}
+
+.obligatory {
+    background-image: url('/images/narrow_frame_obligatory.png');
+}
+
+.optional {
+    background-image: url('/images/narrow_frame_optional.png');
+}
+
+tr.field td.input input {
+    text-align: center;
+    font-size: 24px;
+    border: 0; /*1px solid silver;*/
+    margin-left: -5px;
+    height: 30px;
+    width: 600px;
+}
+
+tr.actions td.action {
+    text-align: right;
 }

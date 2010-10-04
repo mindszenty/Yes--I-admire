@@ -1,15 +1,19 @@
-<h1>Login</h1>
+<% content_for :title do %>
+Enter again the sweet forest
+<% end %>
 
 <%= form_tag session_path do %>
-    <div class="field">
-        <%= label_tag :email %><br/>
-        <%= text_field_tag :email %>
-    </div>
-    <div class="field">
-        <%= label_tag :password %><br/>
-        <%= password_field_tag :password %>
-    </div>
-    <div class="actions">
-        <%= submit_tag 'Login' %>
-    </div>
+    <table>
+    <tr class="field">
+        <td class="label"><%= label_tag :email %></td>
+        <td class="input obligatory"><%= text_field_tag :email %></td>
+    </tr>
+    <tr class="field">
+        <td class="label"><%= label_tag :password %></td>
+        <td class="input obligatory"><%= password_field_tag :password %></td>
+    </tr>
+    <tr class="actions">
+        <td colspan="2" class="action"><%= image_submit_tag "login_button.png" %></td>
+    </tr>
+    </table>
 <% end %>

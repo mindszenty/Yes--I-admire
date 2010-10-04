@@ -1,0 +1,7 @@
+<% content_for :title do %>
+Let it be your profile!
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', articles_path %>

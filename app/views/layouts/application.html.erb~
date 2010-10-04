@@ -10,17 +10,34 @@
 
 <div class="edge"></div>
 <div class="top">
-<div class="logo"></div>
-<div class="title">Test</div>
-<div class="buttons"></div>
+<div class="logo"><%= link_to image_tag("logo.png"), root_path %></div>
+<div class="buttons">
+<% if logged_in? %>
+<div class="button"><div>Hello, <%= link_to current_user.displayname, edit_user_path :id=>current_user %></div></div>
+<div class="button"><%= link_to image_tag("add_news_button.png"), new_article_path %></div>
+<div class="button"><%= link_to image_tag("log_out_button.png"), logout_path %></div>
+<% else %>
+    <div class="button">
+    <% if @controller.is_a? UsersController %>
+    <div>Already registered?</div>
+    <% else %>
+    <%= link_to image_tag("register_button.png"), new_user_path %><br/>
+    <% end %>
+    </div>
+
+    <div class="button">
+    <% if @controller.is_a? SessionsController %>
+    <% else %>
+    <%= link_to image_tag("login_button.png"), login_path %>
+    <% end %>
+    </div>
+<% end %>
+</div>
+<div class="title"><% if content_for?(:title)%><%= yield :title %><% else %>Pleasantville news site!<% end %></div>
+
 </div>
 
-<div class="rest">
-<% if logged_in? %>
-Hello, <%= current_user.displayname %> (<%= link_to "logout", logout_path %>)<br/>
-<% else %>
-<%= link_to "login", login_path %> or <%= link_to "register", new_user_path %>
-<% end %>
+<div class="main">
 
 <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
 <%= content_tag :p, alert, :class => 'alert' if alert.present? %>

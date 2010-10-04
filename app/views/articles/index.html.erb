@@ -1,17 +1,18 @@
-<h1>Listing articles</h1>
+<table class="articles_index">
 <% @articles.each do |article| %>
-<div>
-    <span><%= article.total_rating %></span>
-    <span><%= article.rating_by(current_user) %></span>
-    <span><%= link_to article.title, article %></span>
-    <span><%= raw truncate h(article.body), :length => 500, :separator => " ", :omission => " " + link_to ('(more)', article) %></span>
-    <span>(by <%= article.author.displayname %>)</span>
-    
-    <span>Filed in: <%= article.category.title %></span>
-    <% if article.tags.any? %>
-        <span>Tags: <%= article.tags_string %></span>
-    <% end %>
-</div>
-<% end %>
+<tr id="article_<%= article.id %>">
+    <td class="total_rating"><div><%= article.total_rating %></div></td>
+    <td class="rate"><div><%= render 'rate', :article => article %></div></td>
+    <td class="article">
+        <!--<div class="article_title"></div>-->
+        <div class="article_body"><%= link_to article.title, article %> ☞ <%= raw truncate h(article.body), :length => 500, :separator => " ", :omission => " " + link_to ('(more)', article) %></div>
+        <div class="article_category">Filed in: <%= article.category.title %></div>
+        <% if article.tags.any? %>
+            <div class="article_tags">Tags: <%= article.tags_string %></div>
+        <% end %>
+        <div class="article_author"><%= article.author.displayname %></div>
 
-<%= link_to 'New Article', new_article_path %>
+    </td>
+</tr>
+<% end %>
+</table>

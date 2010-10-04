@@ -18,11 +18,11 @@
 <%= link_to 'Back', articles_path %>
 <% end %>
 
+<%= render 'rate', :article => @article  %>
+
 <h3>Comments</h3>
 <div id="comments">
     <%= render @article.comments %>
 </div>
 
 <%= link_to "new comment", new_article_comment_path(@article, :format => :js), :remote => true, :id => 'new_comment_link' %>
-<%= link_to "star", star_path(@article, :format => :js), :remote => true, :id => 'star_link' %>
-<%= link_to "cross", cross_path(@article, :format => :js), :remote => true, :id => 'cross_link' %>
