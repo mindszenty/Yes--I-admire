@@ -8,20 +8,23 @@
 
 body {
     position: relative;
+    width: 1024px;
+	margin: 0 auto;
 }
 
-a {
+a:link, a:visited, a:focus, a:hover {
+	background-image: url('../images/link_bg.png');
     text-decoration: none;
     font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
+a:focus, a:hover {
+	background-image: url('../images/link_hover_bg.png');
 }
 
 .edge {
     background-color: #ffff00;
-    height: 10px;
+    height: 5px;
     width: 100%;
 }
 
@@ -32,18 +35,20 @@ a:hover {
 }
 
 .logo {
-    margin-top: 35px;
-    margin-left: 55px;
-    width: 227px;
-    height: 124px;
-    background-image: url('/images/logo.png');
+    margin-top: 32px;
+    margin-left: 42px;
+    width: 171px;
+    height: 93px;
+    background-image: url('../images/logo.png');
     float: left;
 }
 
 .title {
-    padding-top: 70px;
-    margin-left: 312px;
+    padding-top: 63px;
+    margin-left: 262px;
     font-size: 30px;
+    width: auto;
+	text-align: center;
 }
 
 .buttons {
@@ -54,9 +59,9 @@ a:hover {
 }
 
 .button {
-    width: 295px;
-    height: 56px;
-    margin-bottom: 12px;
+    width: 203px;
+    height: 43px;
+    margin-bottom: 20px;
 }
 
 .button div {
@@ -84,16 +89,15 @@ td.total_rating {
 
 td.total_rating div {
     font-size: 20px;
-    background-image: url('/images/rating_frame.png');
-    background-repeat: no-repeat;
+    background: url('../images/rating_frame.png') no-repeat;
     text-align: center;
     padding-top: 13px;
-    width: 135px;
-    height: 58px;
+    width: 102px;
+    height: 44px;
 }
 
 td.rate {
-    padding-right: 30px;
+    padding-right: 15px;
 }
 
 td.rate img {
@@ -173,34 +177,33 @@ tr.field td.label {
 }
 
 tr.field td.label label {
-    font-size: 18px;
+    font-size: 14px;
     padding-right: 20px;
     
 }
 
 tr.field td.input {
-    width: 648px;
-    height: 61px;
+    width: 490px;
+    height: 48px;
     vertical-align: top;
     padding-top: 18px;
     background-repeat: no-repeat;
 }
 
 .obligatory {
-    background-image: url('/images/narrow_frame_obligatory.png');
+    background-image: url('../images/narrow_frame_obligatory.png');
 }
 
 .optional {
-    background-image: url('/images/narrow_frame_optional.png');
+    background-image: url('../images/narrow_frame_optional.png');
 }
 
 tr.field td.input_text {
-    width: 648px;
-    height: 251px;
+    width: 490px;
+    height: 191px;
     vertical-align: top;
     padding-top: 18px;
-    background-repeat: no-repeat;
-    background-image: url('/images/text_frame.png');
+    background-image: url('../images/text_frame.png') no-repeat;
 }
 
 tr.field td.input_select {
@@ -211,24 +214,24 @@ tr.field td.input_select {
 
 tr.field td.input input {
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     border: 0; /*1px solid silver;*/
     margin-left: -5px;
     height: 30px;
-    width: 600px;
+    width: 450px;
 }
 
 tr.field td.input_text textarea {
     text-align: left;
-    font-size: 24px;
+    font-size: 18px;
     border: 0;
     margin-left: -5px;
-    height: 220px;
-    width: 600px;
+    height: 180px;
+    width: 450px;
 }
 
 tr.field td.input_select select {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
