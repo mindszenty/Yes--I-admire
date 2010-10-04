@@ -14,6 +14,10 @@ a {
     font-weight: bold;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 .edge {
     background-color: #ffff00;
     height: 10px;
@@ -67,6 +71,7 @@ a {
     margin-left: 70px;
     margin-right: 70px;
 }
+
 .articles_index td {
     vertical-align: top;
 }
@@ -129,6 +134,19 @@ td.article div.article_author {
     text-align: right;
 }
 
+.article_show {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.article_show div.body {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.article_show div.source {
+    margin-bottom: 30px;
+}
 
 .main {
     margin-left: auto;
@@ -175,6 +193,21 @@ tr.field td.input {
     background-image: url('/images/narrow_frame_optional.png');
 }
 
+tr.field td.input_text {
+    width: 648px;
+    height: 251px;
+    vertical-align: top;
+    padding-top: 18px;
+    background-repeat: no-repeat;
+    background-image: url('/images/text_frame.png');
+}
+
+tr.field td.input_select {
+    text-align: left;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
 tr.field td.input input {
     text-align: center;
     font-size: 24px;
@@ -184,6 +217,25 @@ tr.field td.input input {
     width: 600px;
 }
 
+tr.field td.input_text textarea {
+    text-align: left;
+    font-size: 24px;
+    border: 0;
+    margin-left: -5px;
+    height: 220px;
+    width: 600px;
+}
+
+tr.field td.input_select select {
+    font-size: 20px;
+}
+
+
 tr.actions td.action {
     text-align: right;
+}
+
+#comments {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

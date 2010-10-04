@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-      <%= f.label :category_id %>
-      <%= f.collection_select :category_id, Category.all, :id, :title %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :source %><br />
-    <%= f.text_field :source %>
-  </div>
-  <div class="field">
-    <%= f.label :tags_string %><br />
-    <%= f.text_field :tags_string %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table>
+  <tr class="field">
+    <td class="label"><%= f.label :title %></td>
+    <td class="input obligatory"><%= f.text_field :title %></td>
+  </tr>
+  <tr class="field">
+    <td class="label"><%= f.label :body %></td>
+    <td class="input_text"><%= f.text_area :body %></td>
+  </tr>
+  <tr class="field">
+    <td class="label"><%= f.label :source %></td>
+    <td class="input optional"><%= f.text_field :source %></td>
+  </tr>
+  <tr class="field">
+    <td class="label"><%= f.label :tags_string %></td>
+    <td class="input optional"><%= f.text_field :tags_string %></td>
+  </tr>
+  <tr class="field">
+      <td class="label"><%= f.label :category_id %></td>
+      <td class="input_select"><%= f.collection_select :category_id, Category.all, :id, :title %></td>
+  </tr>
+    <tr class="actions">
+        <td colspan="2" class="action"><%= image_submit_tag "publish_button.png" %></td>
+    </tr>
+  </table>
 <% end %>

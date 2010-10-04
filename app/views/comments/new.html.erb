@@ -1,9 +1,11 @@
 <%= form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}) do |f| %>
-    <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-    </div>
-    <div class="actions">
-    <%= f.submit 'Add' %>
-    </div>
+    <table>
+    <tr class="field">
+    <td class="label"><%= f.label :body %></td>
+    <td class="input_text"><%= f.text_area :body %></td>
+    </tr>
+    <tr class="actions">
+    <td class="action" colspan="2"><%= image_submit_tag "publish_button.png" %></td>
+    </tr>
+    </table>
 <% end %>

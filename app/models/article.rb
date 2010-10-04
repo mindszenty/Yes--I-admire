@@ -19,12 +19,12 @@ class Article < ActiveRecord::Base
     end
     
     def rating_by(appraiser)
-        rating = ratings.find_by_user_id(appraiser)
+        rating = ratings.find_by_user_id(appraiser.id)
         return rating ? rating.value : 0
     end
     
     def star(appraiser)
-        rating = Rating.find_or_initialize_by_article_id_and_user_id(id, appraiser)
+        rating = Rating.find_or_initialize_by_article_id_and_user_id(id, appraiser.id)
         if rating.new_record?
             rating.value = 1
         elsif rating.value < 1
@@ -37,7 +37,7 @@ class Article < ActiveRecord::Base
     end
 
     def cross(appraiser)
-        rating = Rating.find_or_initialize_by_article_id_and_user_id(id, appraiser)
+        rating = Rating.find_or_initialize_by_article_id_and_user_id(id, appraiser.id)
         if rating.new_record?
             rating.value = -1
         elsif rating.value > -1

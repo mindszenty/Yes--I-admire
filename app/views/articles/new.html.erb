@@ -1,5 +1,7 @@
-<h1>New article</h1>
+<% content_for :title do %>
+What’s in the news? Your cat!
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', articles_path %>
+

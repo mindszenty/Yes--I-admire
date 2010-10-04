@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     
     def create
         @comment = @article.comments.new(params[:comment])
-        @comment.user = current_user
+        @comment.user =  logged_in? ? current_user : User.find_by_email("anonymous@internet.org")
         if @comment.save
             redirect_to @article, :notice => 'Thanks for your comment'
         else
