@@ -239,3 +239,7 @@ tr.actions td.action {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+#all_news_button {
+    text-align: center;
+}

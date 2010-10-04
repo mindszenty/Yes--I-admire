@@ -1,2 +1,0 @@
-<%= link_to image_tag(article.rating_by(current_user)==1 ? "star_on.png" : "star_off.png", {:border => 0, :style=>"vertical-align: text-bottom;"}), star_path(article, :format => :js), :remote => true, :id => 'star_link' %><br/>
-<%= link_to image_tag(article.rating_by(current_user)==-1 ? "cross_on.png" : "cross_off.png", {:border => 0}), cross_path(article, :format => :js), :remote => true, :id => 'cross_link' %>

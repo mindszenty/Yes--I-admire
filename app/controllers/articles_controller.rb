@@ -5,10 +5,18 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   # ! will come in two variations
   def index
-    @articles = Article.all
+    @articles = Article.find(:all, :conditions => "(SELECT SUM(ratings.value) FROM ratings WHERE ratings.article_id = articles.id)>-1")
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xml  { render :xml => @articles }
+    end
+  end
+  
+  def unabridged_index
+    @articles = Article.all
+    respond_to do |format|
+      format.html { render :action => "index" }
       format.xml  { render :xml => @articles }
     end
   end

@@ -1,6 +1,7 @@
 Simplenews::Application.routes.draw do
     root :to => "articles#index"
     resources :users
+    match '/articles/all' => 'articles#unabridged_index', :as => "unabridged_index"
     resources :articles do
         resources :comments
     end

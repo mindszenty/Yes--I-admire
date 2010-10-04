@@ -1,7 +1,0 @@
-$("td.total_rating div").html(@article.total_rating);
-
-<% if @article.rating_by(current_user)==-1 %>
-$("#article_<%= @article.id %> #cross_link img").attr("src", "/images/cross_on.png");
-<% elsif @article.rating_by(current_user)==0 %>
-$("#article_<%= @article.id %> #star_link img").attr("src", "/images/star_off.png");
-<% end %>

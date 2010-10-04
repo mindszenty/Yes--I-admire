@@ -1,19 +1,16 @@
 <table class="articles_index">
 <% @articles.each do |article| %>
 <tr id="article_<%= article.id %>">
-    <td class="total_rating"><div><%= article.total_rating %></div></td>
-    <td class="rate"><div><%= render 'rate', :article => article %></div></td>
+    <%= render 'rate', :article => article %>
     <td class="article">
-        <!--<div class="article_title"></div>-->
         <div class="article_body"><%= link_to article.title, article %> ☞ <%= raw truncate h(article.body), :length => 500, :separator => " ", :omission => " " + link_to ('(more)', article) %></div>
         <div class="article_category">Filed in: <%= article.category.title %></div>
         <% if article.tags.any? %>
             <div class="article_tags">Tags: <%= article.tags_string %></div>
         <% end %>
         <div class="article_author"><%= article.author.displayname %></div>
-
     </td>
 </tr>
 <% end %>
 </table>
-<%= link_to 'New Article', new_article_path %>
+<%= link_to image_tag("all_news_button.png", {:id => "all_news_button"}), unabridged_index_path %>

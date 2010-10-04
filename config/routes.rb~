@@ -7,6 +7,9 @@ Simplenews::Application.routes.draw do
     resource :session
     match '/login' => "sessions#new", :as => "login"
     match '/logout' => "sessions#destroy", :as => "logout"
+    match '/articles/:id/star' => "articles#star", :as => "star"
+    match '/articles/:id/cross' => "articles#cross", :as => "cross"
+    match '/articles/all' => 'articles#unabridged_index', :as => "unabridged_index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
