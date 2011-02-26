@@ -3,12 +3,12 @@
 <tr id="article_<%= article.id %>">
     <%= render 'rate', :article => article %>
     <td class="article">
-        <div class="article_body"><%= link_to article.title, article %> ☞ <%= raw truncate h(article.body), :length => 500, :separator => " ", :omission => " " + link_to ('(more)', article) %></div>
-        <div class="article_category">Filed in: <%= article.category.title %></div>
+        <div class="article_body"><%= link_to article.title, article %> ▪ <%= raw truncate h(article.body), :length => 500, :separator => " ", :omission => " " + link_to ('(more)', article) %></div>
+        <div class="article_category">☁ <%= article.category.title %></div>
         <% if article.tags.any? %>
-            <div class="article_tags">Tags: <%= article.tags_string %></div>
+            <div class="article_tags">## <%= article.tags_string %></div>
         <% end %>
-        <div class="article_author"><%= article.author.displayname %></div>
+        <div class="article_author">⚉ <%= article.author.displayname %></div>
     </td>
 </tr>
 <% end %>

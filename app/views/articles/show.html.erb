@@ -3,10 +3,10 @@
 <tr id="article_<%= @article.id %>">
     <%= render 'rate', :article => @article %>
     <td><h1><%= @article.title %></h1>
-        <div class="article_author">By <%= @article.author.displayname %></div>
-        <div class="article_category">Filed in: <%= @article.category.title %></div>
+        <div class="article_author">⚉ <%= @article.author.displayname %></div>
+        <div class="article_category">☁ <%= @article.category.title %></div>
         <% if @article.tags.any? %>
-            <div class="article_tags">Tags: <%= @article.tags_string %></div>
+            <div class="article_tags">## <%= @article.tags_string %></div>
         <% end %>
     </td>
 </tr>
@@ -17,7 +17,7 @@
 </div>
 
 <div class="source">
-  <b>Source:</b> <%= @article.source %>
+  <b>↳</b> <%= @article.source %>
 </div>
 
 <% if @article.owned_by? current_user %>
